@@ -1,15 +1,15 @@
-import {tasksData} from "./data";
-import Button from ".button";
+import { tasksData } from "./data";
+import Button from "./button";
 import { useState } from "react";
 
 export default function Card() {
-    const [index, setIndex] = useState[0];
+    const [index, setIndex] = useState(0);
     function handleNextClick(){
         setIndex((index)=> (index + 1) % tasksData.length);
     }
 
     function handlePrevClick(){
-        
+        setIndex((index) => (index - 1 + tasksData.length) % tasksData.length)
     }
     return (
         <>
